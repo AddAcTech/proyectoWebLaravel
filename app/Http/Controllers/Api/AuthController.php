@@ -116,4 +116,10 @@ class AuthController extends Controller
         $users = User::all();
         return response()->json($users, 200);
     }
+
+    public function presentUsers()
+    {
+        $presentUsers = User::where('attendance_status', 1)->get();
+        return response()->json($presentUsers, 200);
+    }
 }
