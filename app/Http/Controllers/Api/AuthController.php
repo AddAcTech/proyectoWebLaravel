@@ -69,7 +69,27 @@ class AuthController extends Controller
 
     return response()->json($user, 200);
 }
+    
+    public function patchUser(Request $request, $id)
+    {
+        try {
+        $user = User::find($id);
+        $user->attendance_status = $request->attendance_status;
+        $user->guest = $request->guest;
+        $user->physical_condition = $request->physical_condition;
+        $user->pdf_invitation = $request->pdf_invitation;
+        $user->save();
 
+        return response()->json([
+            'message' => 'Usuario actualizado',
+        ], 200);
+
+    } catch (\Exception $e) {
+        return response()->json([
+            'error' => $e->getMessage(),
+        ], 500);
+    }
+    } 
 
 
     public function deleteUser($id)

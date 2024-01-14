@@ -14,4 +14,5 @@ Route::middleware('auth:sanctum')->group(function () {
 /*     Route::get('users', [AuthController::class, 'allUsers']);
     Route::delete('users/{id}', [AuthController::class, 'deleteUser']); */
     Route::get('profile', [AuthController::class, 'userProfile']); // Nueva ruta para obtener el perfil del usuario
+    Route::patch('profile/{id}', [AuthController::class, 'patchUser']);
 });

@@ -18,6 +18,10 @@ class User extends Authenticatable
         'award',
         'event_location',
         'category',
+        'attendance_status',
+        'guest',
+        'physical_condition',
+        'pdf_invitation',
 ];
 
 }
