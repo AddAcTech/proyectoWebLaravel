@@ -19,7 +19,7 @@ return new class extends Migration
         $table->string('physical_condition')->nullable();
         $table->string('pdf_invitation')->nullable();
         $table->string('CURP', 18);
-        //$table->timestamps();
+        $table->timestamps();
     });
 }
 
